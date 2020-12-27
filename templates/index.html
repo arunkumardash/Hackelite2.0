@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Deployment Tutorial 1</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1>Pedophile detection in social media</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="number of conversation" placeholder="number of conversation" required="required" />
+        <input type="text" name="percent of conversations started by the author" placeholder="percent of conversations started by the author" required="required" />
+        <input type="text" name="difference between two preceding lines in seconds" placeholder="difference between two preceding lines in seconds" required="required" />
+        <input type="text" name="number of messages sent" placeholder="number of messages sent" required="required" />
+        <input type="text" name="average percent of lines in conversation" placeholder="average percent of lines in conversation" required="required" />
+        <input type="text" name="average percent of characters in conversation" placeholder="average percent of characters in conversation" required="required" />
+        <input type="text" name="number of characters sent by the author" placeholder="number of characters sent by the author" required="required" />
+        <input type="text" name="mean time of messages sent" placeholder="mean time of messages sent" required="required" />
+        <input type="text" name="number of unique contacted authors" placeholder="number of unique contacted authors" required="required" />
+        <input type="text" name="avg number of unique authors interacted with per conversation" placeholder="avg number of unique authors interacted with per conversation" required="required" />
+        <input type="text" name="total unique authors and unique per chat difference" placeholder="total unique authors and unique per chat difference" required="required" />
+        <input type="text" name="conversation num and total unique authors difference" placeholder="conversation num and total unique authors difference" required="required" />
+        <input type="text" name="average question marks per conversations" placeholder="average question marks per conversations" required="required" />
+        <input type="text" name="total question marks" placeholder="total question marks" required="required" />
+        <input type="text" name="total author question marks" placeholder="total author question marks" required="required" />
+        <input type="text" name="avg author question marks" placeholder="avg author question marks" required="required" />
+        <input type="text" name="author and conversation quetsion mark differnece" placeholder="author and conversation quetsion mark differnece" required="required" />
+        <input type="text" name="author total negative in author conv" placeholder="author total negative in author conv" required="required" />
+        <input type="text" name="author total neutral in author conv" placeholder="author total neutral in author conv" required="required" />
+        <input type="text" name="author total positive in author conv" placeholder="author total positive in author conv" required="required" />
+        <input type="text" name=" authortotal compound in author conv" placeholder=" authortotal compound in author conv" required="required" />
+        <input type="text" name="pos word count author" placeholder="pos word count author" required="required" />
+        <input type="text" name="neg word count author" placeholder="neg word count author" required="required" />
+        <input type="text" name="prof word count author" placeholder="prof word count author" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict !</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+</body>
+</html>

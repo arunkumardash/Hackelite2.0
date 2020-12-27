@@ -1,0 +1,6 @@
+import requests
+
+url = 'http://localhost:5000/results'
+r = requests.post(url,json={'number of conversation':1, 'percent of conversations started by the author':0, 'difference between two preceding lines in seconds':30, 'number of messages sent':3, 'average percent of lines in conversation':0.6, 'average percent of characters in conversation':0.6, 'number of characters sent by the author':9, 'mean time of messages sent':960, 'number of unique contacted authors':2, 'avg number of unique authors interacted with per conversation':2, 'total unique authors and unique per chat difference':0, 'conversation num and total unique authors difference':1, 'average question marks per conversations':0, 'total question marks':0, 'total author question marks':0, 'avg author question marks':0, 'author and conversation quetsion mark differnece':0, 'author total negative in author conv':0, 'author total neutral in author conv':1, 'author total positive in author conv':0, ' authortotal compound in author conv':0, 'pos word count author':0, 'neg word count author':0, 'prof word count author':0})
+
+print(r.json())
